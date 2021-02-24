@@ -9,5 +9,6 @@ Student: [Egor Sokolov](https://github.com/Stanaza)
 
   ## Completed tasks
 
-  - coming soon
+  - Retrospective
+  - comming soon
 
