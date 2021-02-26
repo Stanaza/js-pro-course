@@ -10,5 +10,6 @@ Student: [Egor Sokolov](https://github.com/Stanaza)
   ## Completed tasks
 
   - Retrospective
+  - js-classes
   - comming soon
 
