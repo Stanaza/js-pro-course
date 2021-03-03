@@ -1,0 +1,165 @@
+body {
+    overflow: hidden;
+}
+
+.wrapper {
+    height           : 100%;
+    width            : 100%;
+    min-height       : 100%;
+    background-repeat: no-repeat;
+    background       : url(../img/earth.jpg) center;
+    background-size  : cover;
+    filter           : opacity(0.9) brightness(90%);
+    -webkit-filter   : opacity(0.9) brightness(90%);
+}
+
+.grid-container {
+    padding-top   : 70px;
+    max-width     : 650px;
+    margin        : auto;
+    display       : flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size  : 120;
+    font-weight: 800;
+    text-shadow: 1px 2px 10px rgb(7, 7, 7);
+    color      : #ffffff;
+    text-align : center;
+}
+
+.input-block {
+    display        : flex;
+    flex-direction : row;
+    align-items    : center;
+    justify-content: space-around;
+}
+
+.input-container {
+    margin-top: 30px;
+}
+
+.input-elem {
+    font-size            : 20px;
+    padding              : 6px;
+    border-radius        : 6px;
+    background           : #ffffff;
+    -webkit-box-shadow   : 0px 0px 7px 2px rgb(100, 103, 104);
+    -moz-box-shadow      : 0px 0px 7px 2px rgb(100, 103, 104);
+    box-shadow           : 0px 0px 7px 2px rgb(100, 103, 104);
+    width                : 100%;
+    -webkit-border-radius: 6px;
+    -moz-border-radius   : 6px;
+    -ms-border-radius    : 6px;
+    -o-border-radius     : 6px;
+}
+
+.input-elem::placeholder {
+    color: rgb(135, 166, 224);
+}
+
+.input-elem:placeholder-shown {
+    color: rgb(74, 153, 218);
+}
+
+.input-elem:hover {
+    transition        : 0.5s;
+    -webkit-box-shadow: 0px 0px 7px 2px rgb(237, 245, 248);
+    -moz-box-shadow   : 0px 0px 7px 2px rgb(237, 245, 248);
+    box-shadow        : 0px 0px 7px 2px rgb(237, 245, 248);
+    -webkit-transition: 0.5s;
+    -moz-transition   : 0.5s;
+    -ms-transition    : 0.5s;
+    -o-transition     : 0.5s;
+}
+
+.submit-button {
+    margin: 50px auto;
+}
+
+.submit-link {
+    padding              : 12px 60px;
+    border-radius        : 5px;
+    color                : #ffffff;
+    font-weight          : 500;
+    font-size            : 17px;
+    background-color     : #e63434;
+    text-decoration      : none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius   : 5px;
+    -ms-border-radius    : 5px;
+    -o-border-radius     : 5px;
+}
+
+.submit-link:hover {
+    transition        : 0.5s;
+    -webkit-box-shadow: 0px 0px 10px 2px rgb(238, 16, 16);
+    -moz-box-shadow   : 0px 0px 10px 2px rgb(238, 16, 16);
+    box-shadow        : 0px 0px 10px 2px rgb(238, 16, 16);
+    -webkit-transition: 0.5s;
+    -moz-transition   : 0.5s;
+    -ms-transition    : 0.5s;
+    -o-transition     : 0.5s;
+}
+
+.submit-link:active {
+    font-size          : 0.9rem;
+    background-color   : #e84546;
+    transition-duration: 0.2s;
+    text-shadow        : none;
+    box-shadow         : none;
+}
+
+.result-weather-block {
+    margin               : 0 auto;
+    padding              : 20px 160px;
+    display              : flex;
+    flex-direction       : column;
+    align-items          : center;
+    justify-content      : space-around;
+    background-color     : rgb(252, 252, 252, .5);
+    border-radius        : 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius   : 10px;
+    -ms-border-radius    : 10px;
+    -o-border-radius     : 10px;
+}
+
+#result-img {
+    border-radius        : 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius   : 20px;
+    -ms-border-radius    : 20px;
+    -o-border-radius     : 20px;
+}
+
+#result-img-block {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+}
+
+#result-temperature {
+    padding-right: 10px;
+    font-size    : 60px;
+    font-weight  : 800;
+
+}
+
+#result-place {
+    margin     : 15px;
+    font-size  : 20px;
+    font-weight: 700;
+}
+
+#additional-results {
+    /* margin               : 30px; */
+    display              : grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows   : repeat(2, 1fr);
+    grid-column-gap      : 100px;
+    grid-row-gap         : 50px;
+    font-size            : 20px;
+    text-align           : center;
+}
