@@ -1,0 +1,124 @@
+export function createNotification(data) {
+    let notificationNumber;
+    if (localStorage.getItem('notificationNumber')) {
+        notificationNumber = localStorage.getItem('notificationNumber')
+    } else {
+        notificationNumber = 0;
+    }
+    let content = `
+<div class="notification__container">
+            <form class="notification__block_elem" >
+                <div class="notification__content">
+                    <div class="notification__titleBlock">
+                        <h2 class='notification__titleBlock_id'>${data[notificationNumber].id}.</h2>
+                        <h2 class="notification__titleBlock_title">${data[notificationNumber].title}</h2>
+                    </div>
+                    <p class='notification__titleBlock_phrase'>${data[notificationNumber].phrase}</p>
+                </div>
+                <div class='notification__block_closeBtn' tabindex="1">
+                    <img src="./img/close.svg">
+                </div>
+            </form>
+            <div class="actionBlock">
+                <label class="disableTips__block">
+                    Disable tips
+                    <input type="checkbox" tabindex="2" class="checkbox">
+                </label>
+                <div tabindex="3" class='leftBtn__item'>
+                    <img src="./img/icon-left.svg">
+                </div>
+                <div class="radio__block">
+                    ${data.map(notification => `<input type="radio" name="notification" notificationId="${notification.id}" class="radioElem" checked="${notification.id - 1 == notificationNumber}"></input>`).join('')}
+                </div>
+                <div tabindex="4" class='rightBtn__item'>
+                    <img src="./img/icon_right.svg">
+                </div>
+            </div>
+        </div>
+        `
+    document.body.innerHTML = content;
+    setEventListeners(data, notificationNumber);
+    switchCheckBox();
+}
+
+function setNotificationProperties(data, notificationNumber) {
+    document.querySelector('.notification__titleBlock_id').innerHTML = `${data[notificationNumber].id}.`;
+    document.querySelector('.notification__titleBlock_title').innerHTML = data[notificationNumber].title;
+    document.querySelector('.notification__titleBlock_phrase').innerHTML = data[notificationNumber].phrase;
+    document.querySelector('.radio__block').children[notificationNumber].checked = true;
+    localStorage.setItem('notificationNumber', notificationNumber)
+}
+
+function setEventListeners(data, notificationNumber) {
+    document.querySelector('.radio__block').children[notificationNumber].checked = true;
+    const rightBtn = document.querySelector('.rightBtn__item');
+    rightBtn.addEventListener('click', () => {
+        notificationNumber < data.length - 1 ? notificationNumber++ : notificationNumber = 0;
+        setNotificationProperties(data, notificationNumber)
+    })
+
+    rightBtn.addEventListener('keyup', (ev) => {
+        if (ev.key === 'Enter') {
+            notificationNumber < data.length - 1 ? notificationNumber++ : notificationNumber = 0;
+            setNotificationProperties(data, notificationNumber)
+        }
+    })
+
+    const leftBtn = document.querySelector('.leftBtn__item');
+    leftBtn.addEventListener('click', () => {
+        notificationNumber >= 1 ? notificationNumber-- : notificationNumber = data.length - 1;
+        setNotificationProperties(data, notificationNumber)
+    })
+    leftBtn.addEventListener('keyup', (ev) => {
+        if (ev.key === 'Enter') {
+            notificationNumber >= 1 ? notificationNumber-- : notificationNumber = data.length - 1;
+            setNotificationProperties(data, notificationNumber)
+        }
+    })
+
+    const closeBtn = document.querySelector('.notification__block_closeBtn');
+    closeBtn.addEventListener('click', () => {
+        document.querySelector('.notification__container').remove()
+    })
+    closeBtn.addEventListener('keyup', (ev) => {
+        if (ev.key === 'Enter') {
+            document.querySelector('.notification__container').remove()
+        }
+    })
+
+    const disableTipsBtn = document.querySelector('.checkbox');
+    disableTipsBtn.addEventListener('click', () => {
+        if (document.querySelector('.checkbox').checked) {
+            localStorage.setItem('disable', 'true')
+        } else {
+            localStorage.clear()
+        }
+    })
+    disableTipsBtn.addEventListener('keyup', (ev) => {
+        if (ev.key === 'Enter') {
+            disableTipsBtn.checked = !disableTipsBtn.checked
+            if (document.querySelector('.checkbox').checked) {
+                localStorage.setItem('disable', 'true')
+            } else {
+                localStorage.clear()
+            }
+        }
+    })
+
+    const radioBtn = document.querySelector('.radio__block');
+    radioBtn.addEventListener('click', (ev) => {
+        if (ev.target.getAttribute('notificationId')) {
+            notificationNumber = ev.target.getAttribute('notificationId') - 1;
+            setNotificationProperties(data, notificationNumber)
+        }
+    })
+}
+
+function switchCheckBox() {
+    if (localStorage.getItem('disable') == 'true') {
+        document.querySelector('.notification__container').style.display = 'none'
+    }
+}
+
+
+

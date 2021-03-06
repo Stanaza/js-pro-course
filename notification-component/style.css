@@ -1,0 +1,56 @@
+.notification__container {
+    margin               : 100px auto;
+    width                : 50%;
+    border               : 2px solid black;
+    padding              : 15px;
+    border-radius        : 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius   : 5px;
+    -ms-border-radius    : 5px;
+    -o-border-radius     : 5px;
+    background-color     : rgb(220, 20, 60, 0.5);
+    min-height           : 30%;
+    display              : flex;
+    flex-direction       : column;
+}
+
+.actionBlock {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+}
+
+.notification__block_elem {
+    display        : flex;
+    flex-direction : row;
+    align-items    : flex-start;
+    justify-content: space-between;
+}
+
+.notification__titleBlock {
+    display       : flex;
+    flex-direction: row;
+}
+
+.notification__titleBlock_title {
+    margin-left: 20px;
+}
+
+.disableTips__block {
+    padding-right: 15px;
+    align-self   : center;
+}
+
+.notification__content {
+    display       : flex;
+    flex-direction: column;
+    min-height    : 200px;
+}
+
+.radio__block {
+    align-self: center;
+}
+
+.radioElem {
+    height: 16px;
+}
