@@ -12,12 +12,14 @@
     min-height           : 30%;
     display              : flex;
     flex-direction       : column;
+    align-items          : center;
 }
 
 .actionBlock {
     display        : flex;
     flex-direction : row;
     justify-content: space-between;
+    width          : 90%;
 }
 
 .notification__block_elem {
@@ -25,6 +27,8 @@
     flex-direction : row;
     align-items    : flex-start;
     justify-content: space-between;
+    width          : 90%;
+    margin         : 20px;
 }
 
 .notification__titleBlock {
@@ -53,4 +57,11 @@
 
 .radioElem {
     height: 16px;
+}
+
+.rightBtn__item,
+.leftBtn__item,
+.notification__block_closeBtn {
+    background: none;
+    border    : none;
 }
