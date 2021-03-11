@@ -1,6 +1,8 @@
 export function createNotification(data) {
     const notificationNumber = localStorage.getItem('notificationNumber') || 0;
 
+    if (localStorage.getItem('disable') == 'true') { return };
+
     let content = `
     <div class="notification__container">
                 <form class="notification__block_elem" >
@@ -32,7 +34,7 @@ export function createNotification(data) {
                 </div>
             </div>
             `
-    if (localStorage.getItem('disable') == 'true') { return } else { document.body.innerHTML = content };
+    document.body.innerHTML = content;
     setEventListeners(data, notificationNumber);
 }
 
