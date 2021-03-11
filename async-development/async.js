@@ -12,15 +12,19 @@ let humidityElem = document.getElementById('humidity');
 let windElem = document.getElementById('wind_speed');
 let submitButton = document.querySelector('.submit-button');
 let historyBlock = document.querySelector('.result__history_container');
+let preloaderEl = document.getElementById('preloader');
 
 
 function getResponse(cityName, countryName) {
     fetch(`${HOST}?access_key=${ACCESS_KEY}&query=${cityName},${countryName}`).then(response => {
         return response.json()
     }).then(data => {
-        getDataForElements(data);
+        getDataForElements(data)
         document.querySelector('.result__actualWeather').style.display = 'flex';
         document.querySelector('.result-weather-block').style.display = 'flex';
+    }).then(() => {
+        preloaderEl.classList.add('hidden');
+        preloaderEl.classList.remove('visible');
     }).catch(() => {
         inputCityElem.style.background = '#e63434';
         inputCountryElem.style.background = '#e63434'
@@ -95,7 +99,7 @@ function setEventListeners() {
 
     function getLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
+            navigator.geolocation.getCurrentPosition(showPosition)
         } else {
             alert(`Error`);
         }
@@ -104,6 +108,8 @@ function setEventListeners() {
         getResponse(position.coords.latitude, position.coords.longitude)
     }
     document.querySelector('.local').addEventListener('click', () => {
+        preloaderEl.classList.remove('hidden');
+        preloaderEl.classList.add('visible');
         document.querySelector('.result__history').style.display = 'none';
         getLocation();
     })
