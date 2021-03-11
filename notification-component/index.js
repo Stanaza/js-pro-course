@@ -73,17 +73,6 @@ function setEventListeners(data, notificationNumber) {
             localStorage.clear()
         }
     })
-    disableTipsBtn.addEventListener('keyup', (ev) => {
-        if (ev.key === 'Enter') {
-            disableTipsBtn.checked = !disableTipsBtn.checked
-            if (document.querySelector('.checkbox').checked) {
-                localStorage.setItem('disable', 'true')
-            } else {
-                localStorage.clear()
-            }
-        }
-    })
-
     const radioBtn = document.querySelector('.radio__block');
     radioBtn.addEventListener('click', (ev) => {
         if (ev.target.getAttribute('notificationId')) {
