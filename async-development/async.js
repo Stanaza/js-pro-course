@@ -83,20 +83,6 @@ function setEventListeners() {
         getResponse(inputCityElem.value, inputCountryElem.value);
     })
 
-    inputCityElem.addEventListener('keyup', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            getResponse(inputCityElem.value, inputCountryElem.value);
-        }
-    })
-
-    inputCountryElem.addEventListener('keyup', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            getResponse(inputCityElem.value, inputCountryElem.value);
-        }
-    })
-
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition)
@@ -142,8 +128,6 @@ function setEventListeners() {
         document.querySelector('.result-weather-block').style.display = 'flex';
     })
 }
-
-
 
 setEventListeners();
 
