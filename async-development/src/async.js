@@ -1,3 +1,4 @@
+const lodash = require('lodash')
 const HOST = 'http://api.weatherstack.com/current';
 const ACCESS_KEY = '9f08fbd33196f50229c9a39e7a254d45';
 
