@@ -1,6 +1,9 @@
-const lodash = require('lodash')
-const HOST = 'http://api.weatherstack.com/current';
-const ACCESS_KEY = '9f08fbd33196f50229c9a39e7a254d45';
+import { getResponse } from './getResponse.js';
+import { addEntry } from './localStorage.js';
+import { getLocation } from './myLocation.js';
+
+
+const lodash = require('lodash');
 
 let inputCityElem = document.getElementById('input-city');
 let inputCountryElem = document.getElementById('input-country');
@@ -15,49 +18,7 @@ let submitButton = document.querySelector('.submit-button');
 let historyBlock = document.querySelector('.result__history_container');
 let preloaderEl = document.getElementById('preloader');
 
-
-function getResponse(cityName, countryName) {
-    fetch(`${HOST}?access_key=${ACCESS_KEY}&query=${cityName},${countryName}`).then(response => {
-        return response.json()
-    }).then(data => {
-        getDataForElements(data)
-        document.querySelector('.result__actualWeather').style.display = 'flex';
-        document.querySelector('.result-weather-block').style.display = 'flex';
-    }).then(() => {
-        preloaderEl.classList.add('hidden');
-        preloaderEl.classList.remove('visible');
-    }).catch(() => {
-        inputCityElem.style.background = '#e63434';
-        inputCountryElem.style.background = '#e63434'
-        inputCityElem.style.background = '#e63434';
-    })
-}
-
-function addEntry(data) {
-    let allDataItems = JSON.parse(localStorage.getItem('allData')) || [];
-    let newDataItem = {
-        name: data.location.name,
-        country: data.location.country,
-        temperature: data.current.temperature,
-        feels: data.current.feelslike,
-        cloud: data.current.cloudcover,
-        humidity: data.current.humidity,
-        wind: data.current.wind_speed
-    };
-    let isReplaced = false;
-    allDataItems.forEach(item => {
-        if (item.name == newDataItem.name) {
-            isReplaced = true;
-        }
-    })
-    if (!isReplaced) {
-        allDataItems.push(newDataItem)
-        localStorage.setItem('newData', JSON.stringify(newDataItem));
-    }
-    localStorage.setItem('allData', JSON.stringify(allDataItems))
-};
-
-function getDataForElements(data) {
+export function getDataForElements(data) {
     inputCityElem.value = data.location.name;
     inputCountryElem.value = data.location.country;
     weatherImgElem.src = data.current.weather_icons[0];
@@ -70,10 +31,12 @@ function getDataForElements(data) {
     inputCityElem.value = '';
     inputCountryElem.value = '';
     addEntry(data);
+    document.querySelector('.result__actualWeather').style.display = 'flex';
+    document.querySelector('.result-weather-block').style.display = 'flex';
 }
 
-function setEventListeners() {
-    inputCityElem.addEventListener('click', function () {
+export function setEventListeners() {
+    inputCityElem.addEventListener('click', function (e) {
         inputCityElem.style.background = 'white';
         inputCountryElem.style.background = 'white';
         document.querySelector('.result__history').style.display = 'none';
@@ -84,16 +47,6 @@ function setEventListeners() {
         getResponse(inputCityElem.value, inputCountryElem.value);
     })
 
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition)
-        } else {
-            alert(`Error`);
-        }
-    }
-    function showPosition(position) {
-        getResponse(position.coords.latitude, position.coords.longitude)
-    }
     document.querySelector('.local').addEventListener('click', (e) => {
         e.preventDefault();
         preloaderEl.classList.remove('hidden');
@@ -126,9 +79,8 @@ function setEventListeners() {
         window.localStorage.clear();
         document.querySelectorAll('.result__history_item').forEach(item => item.remove());
         document.querySelector('.result__history').style.display = 'none';
-        document.querySelector('.result-weather-block').style.display = 'flex';
     })
 }
-
 setEventListeners();
+
 
