@@ -107,14 +107,16 @@ function setEventListeners() {
     function showPosition(position) {
         getResponse(position.coords.latitude, position.coords.longitude)
     }
-    document.querySelector('.local').addEventListener('click', () => {
+    document.querySelector('.local').addEventListener('click', (e) => {
+        e.preventDefault();
         preloaderEl.classList.remove('hidden');
         preloaderEl.classList.add('visible');
         document.querySelector('.result__history').style.display = 'none';
         getLocation();
     })
 
-    document.querySelector('.history').addEventListener('click', () => {
+    document.querySelector('.history').addEventListener('click', (e) => {
+        e.preventDefault();
         document.querySelectorAll('.result__history_item').forEach(item => item.remove());
         if (localStorage.getItem('allData')) {
             let items = JSON.parse(localStorage.getItem('allData'));
@@ -140,6 +142,8 @@ function setEventListeners() {
         document.querySelector('.result-weather-block').style.display = 'flex';
     })
 }
+
+
 
 setEventListeners();
 
