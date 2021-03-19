@@ -11,15 +11,14 @@
 
 <body>
     <div class="wrapper">
-        <form>
-            <div class="headSection">
-                <div class="head__container">
-                    <button class="head__button local">Local</button>
-                    <button class="head__button history">History</button>
-                </div>
+        <div class="headSection">
+            <div class="head__container">
+                <button class="head__button local">Local</button>
+                <button class="head__button history">History</button>
             </div>
-            <div class="grid-container">
-                <div class="title"><span class="newspan">Weather</span></div>
+        </div>
+        <div class="main-container">
+            <form>
                 <div class="input-block">
                     <div class="input-container">
                         <input class="input-elem" id="input-city" placeholder="City">
@@ -28,30 +27,30 @@
                         <input class="input-elem" id="input-country" placeholder="Country">
                     </div>
                     <button class="submit-button">Submit</button>
-                </div>
 
-                <div id="preloader" class="hidden"></div>
-                <div class="result__history">
-                    <div class="result__history_container"></div>
-                    <button class="result__clearBtn">Clear</button>
                 </div>
-                <div class="result-weather-block">
-                    <div class="result__actualWeather">
-                        <div id="result-img-block">
-                            <div id="result-temperature"></div>
-                            <div><img id="result-img" src="" alt=""></div>
-                        </div>
-                        <div id="result-place">City, Country</div>
-                        <div id="additional-results">
-                            <div id="feel_like">Feels like</div>
-                            <div id="cloudcover">Cloud cover</div>
-                            <div id="humidity">Humidity</div>
-                            <div id="wind_speed">Wind speed</div>
-                        </div>
+            </form>
+            <div id="preloader" class="hidden"></div>
+            <div class="result__history">
+                <div class="result__history_container"></div>
+                <button class="result__clearBtn">Clear</button>
+            </div>
+            <div class="result-weather-block">
+                <div class="result__actualWeather">
+                    <div id="result-img-block">
+                        <div id="result-temperature"></div>
+                        <div><img id="result-img" src="" alt=""></div>
+                    </div>
+                    <div id="result-place">City, Country</div>
+                    <div id="additional-results">
+                        <div id="feel_like">Feels like</div>
+                        <div id="cloudcover">Cloud cover</div>
+                        <div id="humidity">Humidity</div>
+                        <div id="wind_speed">Wind speed</div>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </body>
 

@@ -1,4 +1,4 @@
-import { getDataForElements } from './async.js'
+import { setDataForElements } from './setDataForElements'
 
 export const getResponse = function (cityName, countryName) {
     const HOST = 'http://api.weatherstack.com/current';
@@ -6,7 +6,7 @@ export const getResponse = function (cityName, countryName) {
     fetch(`${HOST}?access_key=${ACCESS_KEY}&query=${cityName},${countryName}`).then(response => {
         return response.json()
     }).then(data => {
-        getDataForElements(data)
+        setDataForElements(data)
     }).then(() => {
         document.getElementById('preloader').classList.add('hidden');
         document.getElementById('preloader').classList.remove('visible');

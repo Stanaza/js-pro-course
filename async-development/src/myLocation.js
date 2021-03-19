@@ -1,7 +1,8 @@
-import { getResponse } from './getResponse.js';
+import { getResponse } from './getResponse';
 
 export function getLocation() {
     if (navigator.geolocation) {
+
         navigator.geolocation.getCurrentPosition(showPosition)
     } else {
         alert(`Error`);

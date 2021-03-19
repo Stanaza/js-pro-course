@@ -24,7 +24,8 @@
 .head__button {
     margin          : 15px;
     font-weight     : bold;
-    font-size       : large;
+    font-size       : 25px;
+    text-shadow     : 1px 1px 2px rgb(0, 0, 0);
     background-color: transparent;
     outline         : none;
 }
@@ -66,33 +67,24 @@ body {
     width            : 100%;
     min-height       : 100%;
     background-repeat: no-repeat;
-    background       : url(../img/earth.jpg) center;
+    background       : url(../img/w_bachground.jpeg) center;
     background-size  : cover;
     filter           : opacity(0.9) brightness(90%);
     -webkit-filter   : opacity(0.9) brightness(90%);
 }
 
-.grid-container {
-    padding-top   : 70px;
+.main-container {
+    margin        : 5% auto;
     max-width     : 850px;
-    margin        : auto;
     display       : flex;
     flex-direction: column;
 }
 
-.title {
-    font-size  : 120;
-    font-weight: 800;
-    text-shadow: 1px 2px 10px rgb(7, 7, 7);
-    color      : #ffffff;
-    text-align : center;
-}
-
 .input-block {
+    margin         : 60px 0 60px 0;
     display        : flex;
     flex-direction : row;
     align-items    : center;
-    margin         : 70px;
     justify-content: space-around;
 }
 
@@ -146,8 +138,7 @@ body {
     padding              : 8px 80px;
     border-radius        : 5px;
     color                : #ffffff;
-    font-weight          : 500;
-    font-size            : 17px;
+    font-size            : 20px;
     background-color     : #e63434;
     -webkit-box-shadow   : 0px 0px 3px 1px rgb(238, 16, 16);
     -moz-box-shadow      : 0px 0px 3px 1px rgb(238, 16, 16);
@@ -196,7 +187,6 @@ body {
     flex-direction       : column;
     align-items          : center;
     justify-content      : space-around;
-    background-color     : rgba(163, 219, 241, 0.4);
     border-radius        : 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius   : 10px;
@@ -205,23 +195,7 @@ body {
     display              : none;
 }
 
-.result-weather-block:hover {
-    transition        : 0.6s;
-    background-color  : rgb(166, 209, 226, 0.6);
-    -webkit-transition: 0.6s;
-    -moz-transition   : 0.6s;
-    -ms-transition    : 0.6s;
-    -o-transition     : 0.6s;
-}
 
-.result-weather-block:not(:hover) {
-    transition        : 0.6s;
-    background-color  : rgba(163, 219, 241, 0.4);
-    -webkit-transition: 0.6s;
-    -moz-transition   : 0.6s;
-    -ms-transition    : 0.6s;
-    -o-transition     : 0.6s;
-}
 
 .result__actualWeather {
     display        : flex;
@@ -243,19 +217,18 @@ body {
     display        : flex;
     flex-direction : row;
     justify-content: space-between;
+    align-items    : center;
 }
 
 #result-temperature {
     padding-right: 10px;
     font-size    : 60px;
-    font-weight  : 800;
 }
 
 #result-place {
-    margin     : 15px;
-    font-size  : 25px;
-    font-weight: 700;
-    text-align : center;
+    margin    : 15px;
+    font-size : 25px;
+    text-align: center;
 }
 
 #additional-results {
@@ -266,7 +239,6 @@ body {
     grid-row-gap         : 20px;
     font-size            : 20px;
     text-align           : center;
-    font-weight          : 800;
     margin-top           : 20px;
     color                : rgb(7, 7, 8);
 }
@@ -284,6 +256,7 @@ body {
     -o-border-radius     : 10px;
     font-size            : 16px;
     font-weight          : 800;
+    margin               : 15px;
 }
 
 .result__history:hover {
@@ -384,4 +357,165 @@ body {
     -moz-transition   : visibility 0s 0.5s, opacity 0.5s linear;
     -ms-transition    : visibility 0s 0.5s, opacity 0.5s linear;
     -o-transition     : visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+
+
+@media screen and (max-width: 1150px) {
+    .title {
+        font-size: 90;
+    }
+
+    .input-elem {
+        font-size: 18px;
+    }
+
+    .submit-button {
+        padding  : 6px 60px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 895px) {
+    .title {
+        font-size: 80;
+    }
+
+    .input-elem {
+        font-size: 15px;
+    }
+
+    .submit-button {
+        padding  : 6px 60px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main-container {
+        margin        : 20% auto;
+        max-width     : 850px;
+        display       : flex;
+        flex-direction: column;
+    }
+
+    .result-weather-block {
+        padding: 20px 120px;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .title {
+        font-size: 60;
+    }
+
+    .input-elem {
+        font-size: 12px;
+    }
+
+    .submit-button {
+        padding  : 5px 40px;
+        font-size: 15px;
+    }
+
+    .result-weather-block {
+        padding: 20px 100px;
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+    .result-weather-block {
+        padding: 20px 80px;
+        margin : 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main-container {
+        margin        : 25% auto;
+        max-width     : 850px;
+        display       : flex;
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 50;
+    }
+
+    .input-elem {
+        font-size: 10px;
+    }
+
+    .submit-button {
+        padding  : 6px 30px;
+        font-size: 10px;
+    }
+
+    .result-weather-block {
+        padding: 10px 70px;
+    }
+
+    #result-temperature {
+        font-size: 40px;
+    }
+
+    #result-place {
+        font-size: 20px;
+    }
+
+    #additional-results {
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (max-width: 530px) {
+    .title {
+        font-size: 50;
+    }
+
+    .input-elem {
+        font-size: 8px;
+    }
+
+    .submit-button {
+        padding  : 6px 30px;
+        font-size: 8px;
+    }
+
+    .result-weather-block {
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .main-container {
+        margin        : 40% auto;
+        max-width     : 850px;
+        display       : flex;
+        flex-direction: column;
+    }
+
+    .input-block {
+        display        : flex;
+        flex-direction : row;
+        align-items    : center;
+        margin         : 40px 0 40px 0;
+        justify-content: space-around;
+    }
+
+    .title {
+        font-size: 50;
+    }
+
+    .input-elem {
+        font-size: 8px;
+
+    }
+
+    .submit-button {
+        padding  : 6px 30px;
+        font-size: 8px;
+    }
 }
