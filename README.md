@@ -12,5 +12,6 @@ Student: [Egor Sokolov](https://github.com/Stanaza)
   - retrospective
   - js-classes
   - notification component
+  - weatherApp
   - comming soon
 
