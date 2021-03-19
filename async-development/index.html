@@ -5,41 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <script defer src="async.js"></script>
+    <script defer src="./dist/bundle.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-
     <div class="wrapper">
-        <div class="grid-container">
-            <div class="title"><span class="newspan">Weather</span></div>
-            <div class="input-block">
-                <div class="input-container">
-                    <input class="input-elem" id="input-city" placeholder="City">
-                </div>
-                <div class="input-container">
-                    <input class="input-elem" id="input-country" placeholder="Country">
-                </div>
+        <div class="headSection">
+            <div class="head__container">
+                <button class="head__button local">Local</button>
+                <button class="head__button history">History</button>
             </div>
-            <div class="submit-button"> <a href="#" class="submit-link">Submit</a></div>
+        </div>
+        <div class="main-container">
+            <form>
+                <div class="input-block">
+                    <div class="input-container">
+                        <input class="input-elem" id="input-city" placeholder="City">
+                    </div>
+                    <div class="input-container">
+                        <input class="input-elem" id="input-country" placeholder="Country">
+                    </div>
+                    <button class="submit-button">Submit</button>
 
-            <div class="result-weather-block">
-                <div id="result-img-block">
-                    <div id="result-temperature"></div>
-                    <div><img id="result-img" src="" alt=""></div>
                 </div>
-                <div id="result-place">City, Country</div>
-                <div id="additional-results">
-                    <div id="feel_like">Feel like</div>
-                    <div id="cloudcover">Cloud cover</div>
-                    <div id="humidity">Humidity</div>
-                    <div id="wind_speed">Wind speed</div>
+            </form>
+            <div id="preloader" class="hidden"></div>
+            <div class="result__history">
+                <div class="result__history_container"></div>
+                <button class="result__clearBtn">Clear</button>
+            </div>
+            <div class="result-weather-block">
+                <div class="result__actualWeather">
+                    <div id="result-img-block">
+                        <div id="result-temperature"></div>
+                        <div><img id="result-img" src="" alt=""></div>
+                    </div>
+                    <div id="result-place">City, Country</div>
+                    <div id="additional-results">
+                        <div id="feel_like">Feels like</div>
+                        <div id="cloudcover">Cloud cover</div>
+                        <div id="humidity">Humidity</div>
+                        <div id="wind_speed">Wind speed</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

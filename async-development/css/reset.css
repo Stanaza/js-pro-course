@@ -133,9 +133,9 @@ table {
     border-spacing : 0;
 }
 
-form *:focus {
+/* form *:focus {
     outline: none;
-}
+} */
 
 /* ------------------ */
 * {
@@ -152,15 +152,14 @@ form *:focus {
     box-sizing        : border-box;
 }
 
-:focus,
+/* :focus,
 :active {
     outline: none;
-}
+} */
 
-a:focus,
-a:active {
+/* a:active {
     outline: none;
-}
+} */
 
 
 
