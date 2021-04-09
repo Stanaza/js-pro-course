@@ -1,0 +1,45 @@
+.clicker-numberField {
+  display: flex;
+  background-color: #e8e7e7;
+  width: 400px;
+  height: 200px;
+}
+
+.numberField-number {
+  font-size: 80px;
+  font-weight: bold;
+  margin: auto;
+  color: gray;
+}
+
+.buttonActions {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 400px;
+}
+
+.buttonActions-block {
+  width: 33.3%;
+  height: 60%;
+}
+
+.buttonActions-action {
+  height: 60px;
+  width: 60px;
+}
+
+.plus {
+  background-color: forestgreen;
+  color: #fff;
+}
+
+.minus {
+  background-color: tomato;
+  color: #fff;
+}
+
+.refresh {
+  background-color: gold;
+}
+
