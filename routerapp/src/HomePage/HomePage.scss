@@ -1,0 +1,21 @@
+.cells__bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.home-top {
+  position: relative;
+  height: 20vh;
+  z-index: 1;
+  text-align: center;
+}
+
+.home-top__title {
+  margin-top: 10vh;
+}
+
+.home-top__description {
+
+}
