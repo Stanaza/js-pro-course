@@ -1,0 +1,95 @@
+
+.wrapper {
+  transition: .5s ease-in-out;
+  text-shadow: 1px 2px 3px #666;
+}
+
+.main-container {
+  line-height: 0;
+  font-family: Lato;
+  padding: 8vh 20px 0 20px;
+  max-width: 1175px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.city {
+  color: #FFFFFF;
+  height: 25%;
+}
+
+.city-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.city-temp {
+  font-size: 180px;
+
+  sup {
+    position: relative;
+    top: -2px;
+    left: -9px;
+    font-size: 180px;
+  }
+}
+
+.city-description {
+  margin-top: 25px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.city-properties {
+  margin-top: 10%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.city-properties-first-group, .city-properties-second-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.city-properties-first-group {
+  width: 37%;
+}
+
+.city-properties-second-group {
+  width: 35.5%;
+}
+
+.item__prop {
+  opacity: 0.6;
+  font-size: 25px;
+  letter-spacing: 1px;
+  line-height: 24px;
+}
+
+.item__value {
+  margin-top: 10%;
+  font-size: 25px;
+  line-height: 50px;
+}
+
+.spinner {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 400px;
+  left: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  transition: 0.5s;
+}
+
+

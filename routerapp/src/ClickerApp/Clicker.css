@@ -1,0 +1,84 @@
+body {
+    overflow: hidden;
+}
+.clicker-wrapper {
+    height: 100vh;
+    background-color: #180000;
+}
+.clicker-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.clicker-container {
+    max-width: 200px;
+    position: relative;
+    top: 5%;
+    left: 5%;
+    width: 100%;
+    z-index: 1;
+}
+
+.clicker-numberField {
+    display: flex;
+    background-color: #e8e7e7;
+    width: 200px;
+    height: 100px;
+}
+
+.numberField-number {
+    font-size: 80px;
+    font-weight: bold;
+    margin: auto;
+    color: gray;
+}
+
+.buttonActions {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 200px;
+
+}
+
+.buttonActions-block {
+    width: 33.3%;
+    height: 60%;
+    border: none;
+}
+
+.buttonActions-action {
+    height: 30px;
+    width: 30px;
+
+}
+
+.plus {
+    background-color: forestgreen;
+    color: #fff;
+}
+.plus:active {
+    background-color: #053011;
+    color: #000000;
+}
+
+.minus {
+    background-color: tomato;
+    color: #fff;
+}
+.minus:active {
+    background-color: #811b03;
+    color: #090303;
+}
+
+.refresh:active {
+    background-color: #705503;
+    color: #fff;
+}
+
+.refresh {
+    background-color: gold;
+}
+

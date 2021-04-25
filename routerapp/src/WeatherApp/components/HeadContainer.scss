@@ -1,0 +1,95 @@
+.head-container {
+  font-family: Lato;
+  height: 100px;
+  margin-bottom: 8.5vh;
+}
+.temperature-toggle-block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.temperature-toggle__deg {
+  font-size: 18px;
+  line-height: 32px;
+  color: #FFFFFF;
+  opacity: 0.4;
+}
+
+.temperature-toggle {
+  margin-left: 9px;
+}
+
+.temperature-toggle__btn {
+  border: none;
+  outline: none;
+  background-color: #7290B9;
+  color: #8EA6C7;
+  border: 1px solid #BBCADD;
+  height: 29px;
+  width: 38px;
+}
+
+.celsius {
+  border-radius: 8px 0 0 8px;
+  border-right: none;
+}
+
+.fahrenheit {
+  border-radius: 0 8px 8px 0;
+  border-left: none;
+}
+
+.active-deg {
+  transition: 0.6s;
+  background-color: #8EA6C7;
+  color: #FFFFFF;
+}
+
+.block-info-weather {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block-head {
+  width: 100%;
+  display: block;
+}
+
+.current-city {
+  text-shadow: 1px 2px 3px #666;
+  margin: 25px 0 34px 0;
+  font-size: 50px;
+  color: #fff;
+}
+
+.block-choice__city, .block-choice__position {
+  font-size: 18px;
+  color: #fff;
+  opacity: 0.6;
+  background: transparent;
+  border: none;
+  text-shadow: 1px 2px 3px #666;
+}
+.block-choice__position {
+    padding-left: 5px;
+}
+
+.block-choice__img {
+  font-size: 35px;
+  margin-left: 22px;
+}
+
+.block-choice__city:hover {
+  color: black;
+  transition: 0.5s;
+}
+
+.block-choice__position:hover {
+  color: black;
+  transition: 0.5s;
+}
+
+
+
+
+
